@@ -1,6 +1,7 @@
-import 'package:expense_tracker/expenses_list.dart';
-import 'package:expense_tracker/models/expenses.dart';
-import 'package:expense_tracker/next_expense.dart';
+import 'package:exprense_tracker/expenses_list.dart';
+import 'package:exprense_tracker/models/expenses.dart';
+import 'package:exprense_tracker/next_expense.dart';
+import 'package:exprense_tracker/widgets/charts/chart.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -77,7 +78,10 @@ class _ExpensesState extends State<Expenses> {
             onPressed: _openAddExpenseOverlay, icon: const Icon(Icons.add))
       ]),
       body: Column(
-        children: [const Text("Charts..."), Expanded(child: mainContent)],
+        children: [
+          Chart(expenses: _registeredExpenses),
+          Expanded(child: mainContent)
+        ],
       ),
     );
   }
